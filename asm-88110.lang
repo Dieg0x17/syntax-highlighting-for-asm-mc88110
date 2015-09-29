@@ -7,7 +7,7 @@
 -->
 <!DOCTYPE language SYSTEM "language.dtd">
 <language _name="Assembler (MC88110)" version="1.0" _section="Sources" globs="*.asm" mimetypes="text/x-asm;text/x-assembler">
-	
+
 	<escape-char>\</escape-char>
 
 	<line-comment _name = "Line Comment" style= "Comment">
@@ -44,9 +44,13 @@
 	</string>
 
 	<keyword-list _name="Preprocesor" style="Keyword">
+			<prefix>(?&lt;![\w\.])</prefix>
 			<keyword>MACRO</keyword>
 			<keyword>ENDMACRO</keyword>
+                  	<keyword>low</keyword>
+          		<keyword>high</keyword>
 	</keyword-list>
+
 	
 	<keyword-list _name = "Operation Codes" style = "Keyword" style-ref="Keyword" 	match-empty-string-at-beginning = "TRUE"
 		match-empty-string-at-end = "TRUE" case-sensitive="FALSE">
@@ -57,66 +61,68 @@
 		<!--
 			op codes del procesador		
 		-->
-		<keyword>add</keyword>
-		<keyword>add</keyword>
-		<keyword>add\.ci</keyword>
-		<keyword>add\.cio</keyword>
 		<keyword>add.co</keyword>
+		<keyword>add.ci</keyword>
+		<keyword>add.cio</keyword>
+		<keyword>add</keyword>
+
+		<keyword>addu.cio</keyword>
+        <keyword>addu.co</keyword>
+		<keyword>addu.ci</keyword>
 		<keyword>addu</keyword>
-		<keyword>addu</keyword>
-		<keyword>addu\.ci</keyword>
-		<keyword>addu\.cio</keyword>
-		<keyword>addu\.co</keyword>
+
+
+
+		<keyword>and.c</keyword>
+		<keyword>and.u</keyword>
 		<keyword>and</keyword>
-		<keyword>and</keyword>
-		<keyword>and\.c</keyword>
-		<keyword>and\.u</keyword>
+
+		<keyword>bb0.n</keyword>
 		<keyword>bb0</keyword>
-		<keyword>bb0\.n</keyword>
+
+		<keyword>bb1.n</keyword>
 		<keyword>bb1</keyword>
-		<keyword>bb1\.n</keyword>
+
+		<keyword>bcnd.n</keyword>
 		<keyword>bcnd</keyword>
-		<keyword>bcnd\.n</keyword>
+
+		<keyword>br.n</keyword>
 		<keyword>br</keyword>
-		<keyword>br\.n</keyword>
+
+		<keyword>bsr.n</keyword>
 		<keyword>bsr</keyword>
-		<keyword>bsr\.n</keyword>
+
+
 		<keyword>clr</keyword>
-		<keyword>clr</keyword>
+
 		<keyword>cmp</keyword>
-		<keyword>cmp</keyword>
+
 		<keyword>div</keyword>
-		<keyword>div</keyword>
+
 		<keyword>divs</keyword>
-		<keyword>divs</keyword>
+
+		<keyword>divu.d</keyword>
 		<keyword>divu</keyword>
-		<keyword>divu</keyword>
-		<keyword>divu\.d</keyword>
+
 		<keyword>ext</keyword>
-		<keyword>ext</keyword>
+
 		<keyword>extu</keyword>
-		<keyword>extu</keyword>
+
 		<keyword>fadd.ddd</keyword>
-		<keyword>fadd.ddd</keyword>
+
 		<keyword>fadd.dds</keyword>
-		<keyword>fadd.dds</keyword>
+
 		<keyword>fadd.ddx</keyword>
 		<keyword>fadd.dsd</keyword>
-		<keyword>fadd.dsd</keyword>
-		<keyword>fadd.dss</keyword>
 		<keyword>fadd.dss</keyword>
 		<keyword>fadd.dsx</keyword>
 		<keyword>fadd.dxd</keyword>
 		<keyword>fadd.dxs</keyword>
 		<keyword>fadd.dxx</keyword>
 		<keyword>fadd.sdd</keyword>
-		<keyword>fadd.sdd</keyword>
-		<keyword>fadd.sds</keyword>
 		<keyword>fadd.sds</keyword>
 		<keyword>fadd.sdx</keyword>
 		<keyword>fadd.ssd</keyword>
-		<keyword>fadd.ssd</keyword>
-		<keyword>fadd.sss</keyword>
 		<keyword>fadd.sss</keyword>
 		<keyword>fadd.ssx</keyword>
 		<keyword>fadd.sxd</keyword>
@@ -132,60 +138,42 @@
 		<keyword>fadd.xxs</keyword>
 		<keyword>fadd.xxx</keyword>
 		<keyword>fcmp.sdd</keyword>
-		<keyword>fcmp.sdd</keyword>
-		<keyword>fcmp.sds</keyword>
 		<keyword>fcmp.sds</keyword>
 		<keyword>fcmp.sdx</keyword>
 		<keyword>fcmp.ssd</keyword>
-		<keyword>fcmp.ssd</keyword>
-		<keyword>fcmp.sss</keyword>
 		<keyword>fcmp.sss</keyword>
 		<keyword>fcmp.ssx</keyword>
 		<keyword>fcmp.sxd</keyword>
 		<keyword>fcmp.sxs</keyword>
 		<keyword>fcmp.sxx</keyword>
 		<keyword>fcmpu.sdd</keyword>
-		<keyword>fcmpu.sdd</keyword>
-		<keyword>fcmpu.sds</keyword>
 		<keyword>fcmpu.sds</keyword>
 		<keyword>fcmpu.sdx</keyword>
 		<keyword>fcmpu.ssd</keyword>
-		<keyword>fcmpu.ssd</keyword>
-		<keyword>fcmpu.sss</keyword>
 		<keyword>fcmpu.sss</keyword>
 		<keyword>fcmpu.ssx</keyword>
 		<keyword>fcmpu.sxd</keyword>
 		<keyword>fcmpu.sxs</keyword>
 		<keyword>fcmpu.sxx</keyword>
 		<keyword>fcvt.ds</keyword>
-		<keyword>fcvt.ds</keyword>
 		<keyword>fcvt.dx</keyword>
-		<keyword>fcvt.sd</keyword>
 		<keyword>fcvt.sd</keyword>
 		<keyword>fcvt.sx</keyword>
 		<keyword>fcvt.xd</keyword>
 		<keyword>fcvt.xs</keyword>
 		<keyword>fdiv.ddd</keyword>
-		<keyword>fdiv.ddd</keyword>
-		<keyword>fdiv.dds</keyword>
 		<keyword>fdiv.dds</keyword>
 		<keyword>fdiv.ddx</keyword>
 		<keyword>fdiv.dsd</keyword>
-		<keyword>fdiv.dsd</keyword>
-		<keyword>fdiv.dss</keyword>
 		<keyword>fdiv.dss</keyword>
 		<keyword>fdiv.dsx</keyword>
 		<keyword>fdiv.dxd</keyword>
 		<keyword>fdiv.dxs</keyword>
 		<keyword>fdiv.dxx</keyword>
 		<keyword>fdiv.sdd</keyword>
-		<keyword>fdiv.sdd</keyword>
-		<keyword>fdiv.sds</keyword>
 		<keyword>fdiv.sds</keyword>
 		<keyword>fdiv.sdx</keyword>
 		<keyword>fdiv.ssd</keyword>
-		<keyword>fdiv.ssd</keyword>
-		<keyword>fdiv.sss</keyword>
 		<keyword>fdiv.sss</keyword>
 		<keyword>fdiv.ssx</keyword>
 		<keyword>fdiv.sxd</keyword>
@@ -204,31 +192,22 @@
 		<keyword>ff1</keyword>
 		<keyword>fldcr</keyword>
 		<keyword>flt.ds</keyword>
-		<keyword>flt.ds</keyword>
 		<keyword>flt.ss</keyword>
 		<keyword>flt.ss</keyword>
 		<keyword>flt.xs</keyword>
 		<keyword>fmul.ddd</keyword>
-		<keyword>fmul.ddd</keyword>
-		<keyword>fmul.dds</keyword>
 		<keyword>fmul.dds</keyword>
 		<keyword>fmul.ddx</keyword>
 		<keyword>fmul.dsd</keyword>
-		<keyword>fmul.dsd</keyword>
-		<keyword>fmul.dss</keyword>
 		<keyword>fmul.dss</keyword>
 		<keyword>fmul.dsx</keyword>
 		<keyword>fmul.dxd</keyword>
 		<keyword>fmul.dxs</keyword>
 		<keyword>fmul.dxx</keyword>
 		<keyword>fmul.sdd</keyword>
-		<keyword>fmul.sdd</keyword>
-		<keyword>fmul.sds</keyword>
 		<keyword>fmul.sds</keyword>
 		<keyword>fmul.sdx</keyword>
 		<keyword>fmul.ssd</keyword>
-		<keyword>fmul.ssd</keyword>
-		<keyword>fmul.sss</keyword>
 		<keyword>fmul.sss</keyword>
 		<keyword>fmul.ssx</keyword>
 		<keyword>fmul.sxd</keyword>
@@ -244,13 +223,9 @@
 		<keyword>fmul.xxs</keyword>
 		<keyword>fmul.xxx</keyword>
 		<keyword>fsqrt.dd</keyword>
-		<keyword>fsqrt.dd</keyword>
-		<keyword>fsqrt.ds</keyword>
 		<keyword>fsqrt.ds</keyword>
 		<keyword>fsqrt.dx</keyword>
 		<keyword>fsqrt.sd</keyword>
-		<keyword>fsqrt.sd</keyword>
-		<keyword>fsqrt.ss</keyword>
 		<keyword>fsqrt.ss</keyword>
 		<keyword>fsqrt.sx</keyword>
 		<keyword>fsqrt.xd</keyword>
@@ -258,26 +233,18 @@
 		<keyword>fsqrt.xx</keyword>
 		<keyword>fstcr</keyword>
 		<keyword>fsub.ddd</keyword>
-		<keyword>fsub.ddd</keyword>
-		<keyword>fsub.dds</keyword>
 		<keyword>fsub.dds</keyword>
 		<keyword>fsub.ddx</keyword>
 		<keyword>fsub.dsd</keyword>
-		<keyword>fsub.dsd</keyword>
-		<keyword>fsub.dss</keyword>
 		<keyword>fsub.dss</keyword>
 		<keyword>fsub.dsx</keyword>
 		<keyword>fsub.dxd</keyword>
 		<keyword>fsub.dxs</keyword>
 		<keyword>fsub.dxx</keyword>
 		<keyword>fsub.sdd</keyword>
-		<keyword>fsub.sdd</keyword>
-		<keyword>fsub.sds</keyword>
 		<keyword>fsub.sds</keyword>
 		<keyword>fsub.sdx</keyword>
 		<keyword>fsub.ssd</keyword>
-		<keyword>fsub.ssd</keyword>
-		<keyword>fsub.sss</keyword>
 		<keyword>fsub.sss</keyword>
 		<keyword>fsub.ssx</keyword>
 		<keyword>fsub.sxd</keyword>
@@ -297,238 +264,198 @@
 		<keyword>illop2</keyword>
 		<keyword>illop3</keyword>
 		<keyword>int.sd</keyword>
-		<keyword>int.sd</keyword>
 		<keyword>int.ss</keyword>
-		<keyword>int.ss</keyword>
-		<keyword>int.sx</keyword>
-		<keyword>jmp</keyword>
+    		<keyword>int.sx</keyword>
+
 		<keyword>jmp.n</keyword>
-		<keyword>jsr</keyword>
+		<keyword>jmp</keyword>
+
 		<keyword>jsr.n</keyword>
-		<keyword>ld</keyword>
-		<keyword>ld</keyword>
-		<keyword>ld</keyword>
-		<keyword>ld</keyword>
-		<keyword>ld</keyword>
-		<keyword>ld</keyword>
+		<keyword>jsr</keyword>
+
 		<keyword>ld.b</keyword>
-		<keyword>ld.b</keyword>
-		<keyword>ld.b</keyword>
+
 		<keyword>ld.b.usr</keyword>
-		<keyword>ld.b.usr</keyword>
-		<keyword>ld.bu</keyword>
-		<keyword>ld.bu</keyword>
-		<keyword>ld.bu</keyword>
+
 		<keyword>ld.bu.usr</keyword>
 		<keyword>ld.bu.usr</keyword>
+
+		<keyword>ld.bu</keyword>
+
 		<keyword>ld.d</keyword>
-		<keyword>ld.d</keyword>
-		<keyword>ld.d</keyword>
-		<keyword>ld.d</keyword>
-		<keyword>ld.d</keyword>
-		<keyword>ld.d</keyword>
+
 		<keyword>ld.d.usr</keyword>
-		<keyword>ld.d.usr</keyword>
-		<keyword>ld.d.usr</keyword>
-		<keyword>ld.d.usr</keyword>
-		<keyword>ld.h</keyword>
-		<keyword>ld.h</keyword>
-		<keyword>ld.h</keyword>
+
 		<keyword>ld.h.usr</keyword>
-		<keyword>ld.h.usr</keyword>
-		<keyword>ld.hu</keyword>
-		<keyword>ld.hu</keyword>
-		<keyword>ld.hu</keyword>
 		<keyword>ld.hu.usr</keyword>
 		<keyword>ld.hu.usr</keyword>
+
+		<keyword>ld.hu</keyword>
+		<keyword>ld.h</keyword>
+
 		<keyword>ld.usr</keyword>
-		<keyword>ld.usr</keyword>
-		<keyword>ld.usr</keyword>
-		<keyword>ld.usr</keyword>
-		<keyword>ld.x</keyword>
-		<keyword>ld.x</keyword>
 		<keyword>ld.x</keyword>
 		<keyword>ld.x.usr</keyword>
-		<keyword>ld.x.usr</keyword>
-		<keyword>lda</keyword>
-		<keyword>lda</keyword>
-		<keyword>lda</keyword>
-		<keyword>lda.b</keyword>
-		<keyword>lda.b</keyword>
+
+		<keyword>ld</keyword>
+
+
 		<keyword>lda.b</keyword>
 		<keyword>lda.d</keyword>
-		<keyword>lda.d</keyword>
-		<keyword>lda.d</keyword>
-		<keyword>lda.h</keyword>
-		<keyword>lda.h</keyword>
 		<keyword>lda.h</keyword>
 		<keyword>lda.x</keyword>
+		<keyword>lda</keyword>
+
 		<keyword>ldcr</keyword>
+
 		<keyword>mak</keyword>
-		<keyword>mak</keyword>
-		<keyword>mask</keyword>
+
 		<keyword>mask.u</keyword>
+		<keyword>mask</keyword>
+
 		<keyword>mov.d</keyword>
-		<keyword>mov.d</keyword>
-		<keyword>mov.s</keyword>
 		<keyword>mov.s</keyword>
 		<keyword>mov</keyword>
-		<keyword>mul</keyword>
+
 		<keyword>mul</keyword>
 		<keyword>muls</keyword>
-		<keyword>mulu</keyword>
-		<keyword>mulu</keyword>
 		<keyword>mulu.d</keyword>
+		<keyword>mulu</keyword>
+
 		<keyword>nint.sd</keyword>
 		<keyword>nint.sd</keyword>
 		<keyword>nint.ss</keyword>
 		<keyword>nint.ss</keyword>
 		<keyword>nint.sx</keyword>
-		<keyword>or</keyword>
-		<keyword>or</keyword>
+
+
+
 		<keyword>or.c</keyword>
 		<keyword>or.u</keyword>
-		<keyword>padd</keyword>
+		<keyword>or</keyword>
+
+
 		<keyword>padd.b</keyword>
 		<keyword>padd.h</keyword>
-		<keyword>padds.s</keyword>
+		<keyword>padd</keyword>
+
+
 		<keyword>padds.s.b</keyword>
 		<keyword>padds.s.h</keyword>
-		<keyword>padds.u</keyword>
+		<keyword>padds.s</keyword>
+
+
 		<keyword>padds.u.b</keyword>
 		<keyword>padds.u.h</keyword>
-		<keyword>padds.us</keyword>
+		<keyword>padds.u</keyword>
+
 		<keyword>padds.us.b</keyword>
 		<keyword>padds.us.h</keyword>
+		<keyword>padds.us</keyword>
+
 		<keyword>pcmp</keyword>
 		<keyword>pmul</keyword>
-		<keyword>ppack.16</keyword>
+
+
 		<keyword>ppack.16.h</keyword>
-		<keyword>ppack.32</keyword>
+		<keyword>ppack.16</keyword>
+
 		<keyword>ppack.32.b</keyword>
 		<keyword>ppack.32.h</keyword>
+		<keyword>ppack.32</keyword>
+
 		<keyword>ppack.8</keyword>
+
+
 		<keyword>prot</keyword>
-		<keyword>prot</keyword>
-		<keyword>psub</keyword>
+
 		<keyword>psub.b</keyword>
 		<keyword>psub.h</keyword>
-		<keyword>psubs.s</keyword>
+		<keyword>psub</keyword>
+
+
 		<keyword>psubs.s.b</keyword>
 		<keyword>psubs.s.h</keyword>
-		<keyword>psubs.u</keyword>
+		<keyword>psubs.s</keyword>
+
+
 		<keyword>psubs.u.b</keyword>
 		<keyword>psubs.u.h</keyword>
-		<keyword>psubs.us</keyword>
+		<keyword>psubs.u</keyword>
+
+
 		<keyword>psubs.us.b</keyword>
 		<keyword>psubs.us.h</keyword>
+		<keyword>psubs.us</keyword>
+
 		<keyword>punpk.b</keyword>
 		<keyword>punpk.h</keyword>
 		<keyword>punpk.n</keyword>
+
+
 		<keyword>rot</keyword>
-		<keyword>rot</keyword>
+
 		<keyword>rte</keyword>
 		<keyword>set</keyword>
-		<keyword>set</keyword>
-		<keyword>st</keyword>
-		<keyword>st</keyword>
-		<keyword>st</keyword>
-		<keyword>st</keyword>
-		<keyword>st</keyword>
 		<keyword>st</keyword>
 		<keyword>st.wt</keyword>
-		<keyword>st.wt</keyword>
-		<keyword>st.wt</keyword>
-		<keyword>st.wt</keyword>
-		<keyword>st.b</keyword>
-		<keyword>st.b</keyword>
-		<keyword>st.b</keyword>
+
 		<keyword>st.b.wt</keyword>
-		<keyword>st.b.wt</keyword>
-		<keyword>st.b.usr</keyword>
-		<keyword>st.b.usr</keyword>
 		<keyword>st.b.usr.wt</keyword>
-		<keyword>st.b.usr.wt</keyword>
-		<keyword>st.d</keyword>
-		<keyword>st.d</keyword>
-		<keyword>st.d</keyword>
-		<keyword>st.d</keyword>
-		<keyword>st.d</keyword>
-		<keyword>st.d</keyword>
-		<keyword>st.d.wt</keyword>
-		<keyword>st.d.wt</keyword>
-		<keyword>st.d.wt</keyword>
-		<keyword>st.d.wt</keyword>
-		<keyword>st.d.usr</keyword>
-		<keyword>st.d.usr</keyword>
-		<keyword>st.d.usr</keyword>
-		<keyword>st.d.usr</keyword>
+		<keyword>st.b</keyword>
+
+
+
+
 		<keyword>st.d.usr.wt</keyword>
-		<keyword>st.d.usr.wt</keyword>
-		<keyword>st.d.usr.wt</keyword>
-		<keyword>st.d.usr.wt</keyword>
-		<keyword>st.h</keyword>
-		<keyword>st.h</keyword>
-		<keyword>st.h</keyword>
+		<keyword>st.d.usr</keyword>
+		<keyword>st.d.wt</keyword>
+		<keyword>st.d</keyword>
+
+
 		<keyword>st.h.wt</keyword>
-		<keyword>st.h.wt</keyword>
-		<keyword>st.h.usr</keyword>
-		<keyword>st.h.usr</keyword>
 		<keyword>st.h.usr.wt</keyword>
-		<keyword>st.h.usr.wt</keyword>
-		<keyword>st.usr</keyword>
-		<keyword>st.usr</keyword>
-		<keyword>st.usr</keyword>
+		<keyword>st.h.usr</keyword>
+		<keyword>st.h</keyword>
+
 		<keyword>st.usr</keyword>
 		<keyword>st.usr.wt</keyword>
-		<keyword>st.usr.wt</keyword>
-		<keyword>st.usr.wt</keyword>
-		<keyword>st.usr.wt</keyword>
-		<keyword>st.x</keyword>
-		<keyword>st.x</keyword>
 		<keyword>st.x</keyword>
 		<keyword>st.x.wt</keyword>
-		<keyword>st.x.wt</keyword>
-		<keyword>st.x.usr</keyword>
 		<keyword>st.x.usr</keyword>
 		<keyword>st.x.usr.wt</keyword>
-		<keyword>st.x.usr.wt</keyword>
+
 		<keyword>stcr</keyword>
-		<keyword>sub</keyword>
-		<keyword>sub</keyword>
+
 		<keyword>sub.ci</keyword>
 		<keyword>sub.cio</keyword>
 		<keyword>sub.co</keyword>
-		<keyword>subu</keyword>
-		<keyword>subu</keyword>
+		<keyword>sub</keyword>
+
+
 		<keyword>subu.ci</keyword>
 		<keyword>subu.cio</keyword>
 		<keyword>subu.co</keyword>
+		<keyword>subu</keyword>
+
 		<keyword>tb0</keyword>
 		<keyword>tb1</keyword>
 		<keyword>tbnd</keyword>
-		<keyword>tbnd</keyword>
 		<keyword>tcnd</keyword>
 		<keyword>trnc.sd</keyword>
-		<keyword>trnc.sd</keyword>
-		<keyword>trnc.ss</keyword>
 		<keyword>trnc.ss</keyword>
 		<keyword>trnc.sx</keyword>
+
 		<keyword>xcr</keyword>
-		<keyword>xmem</keyword>
-		<keyword>xmem</keyword>
-		<keyword>xmem</keyword>
-		<keyword>xmem.bu</keyword>
-		<keyword>xmem.bu</keyword>
-		<keyword>xmem.bu</keyword>
+
 		<keyword>xmem.bu.usr</keyword>
-		<keyword>xmem.bu.usr</keyword>
+		<keyword>xmem.bu</keyword>
 		<keyword>xmem.usr</keyword>
-		<keyword>xmem.usr</keyword>
-		<keyword>xor</keyword>
-		<keyword>xor</keyword>
+		<keyword>xmem</keyword>
+
 		<keyword>xor.c</keyword>
 		<keyword>xor.u</keyword>
+		<keyword>xor</keyword>
 	</keyword-list>
 
 

@@ -397,7 +397,7 @@
 
 		<keyword>rte</keyword>
 		<keyword>set</keyword>
-		<keyword>st</keyword>
+
 		<keyword>st.wt</keyword>
 
 		<keyword>st.b.wt</keyword>
@@ -424,7 +424,7 @@
 		<keyword>st.x.wt</keyword>
 		<keyword>st.x.usr</keyword>
 		<keyword>st.x.usr.wt</keyword>
-
+		<keyword>st</keyword>
 		<keyword>stcr</keyword>
 
 		<keyword>sub.ci</keyword>

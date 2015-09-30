@@ -26,16 +26,16 @@
 	</string>
 	-->
 
-	<pattern-item _name = "Operators" style = "Keyword">
-		<regex>[-.,:\+\*\/\(\)\{\}\[]|]</regex>
+	<pattern-item _name = "Local Label" style = "Preprocessor">
+		<regex>.[A-Za-z_0-9]*:</regex>
 	</pattern-item>
 
 	<pattern-item _name = "Label" style = "Preprocessor">
 		<regex>^[A-Za-z_][A-Za-z_0-9]*\:</regex>
 	</pattern-item>
 
-	<pattern-item _name = "Local Label" style = "Preprocessor">
-		<regex>.[A-Za-z_0-9]*:</regex>
+	<pattern-item _name = "Operators" style = "Keyword">
+		<regex>[-.,:\+\*\/\(\)\{\}\[]|]</regex>
 	</pattern-item>
 
 	<string _name = "String" style = "String" end-at-line-end = "TRUE">
@@ -58,6 +58,7 @@
 			op codes del emulador		
 		-->
 		<keyword>stop</keyword>
+		<keyword>org</keyword>
 		<!--
 			op codes del procesador		
 		-->
@@ -464,17 +465,6 @@
 		match-empty-string-at-beginning = "TRUE"
 		match-empty-string-at-end = "TRUE">
 		
-		<!-- 
-		<keyword>rax</keyword>
-		<keyword>rbx</keyword>
-		<keyword>rcx</keyword>
-		<keyword>rdx</keyword>		
-		<keyword>rsi</keyword>
-		<keyword>rdi</keyword>		
-		<keyword>rsp</keyword>
-		<keyword>rbp</keyword>
-		 -->
-
 		<keyword>r0</keyword>
 		<keyword>r1</keyword>
 		<keyword>r2</keyword>
@@ -507,85 +497,6 @@
 		<keyword>r29</keyword>
 		<keyword>r30</keyword>
 
-		<!-- 
-		
-		<keyword>eax</keyword>
-		<keyword>ebx</keyword>
-		<keyword>ecx</keyword>
-		<keyword>edx</keyword>		
-		<keyword>esi</keyword>
-		<keyword>edi</keyword>		
-		<keyword>esp</keyword>
-		<keyword>ebp</keyword>
-
-		<keyword>ax</keyword>
-		<keyword>bx</keyword>
-		<keyword>cx</keyword>
-		<keyword>dx</keyword>
-		<keyword>di</keyword>
-		<keyword>si</keyword>
-		<keyword>bp</keyword>
-		<keyword>sp</keyword>
-
-		<keyword>al</keyword>
-		<keyword>ah</keyword>
-		<keyword>bh</keyword>
-		<keyword>bl</keyword>
-		<keyword>ch</keyword>
-		<keyword>cl</keyword>
-		<keyword>dh</keyword>
-		<keyword>dl</keyword>
-
-		<keyword>cs</keyword>
-		<keyword>ds</keyword>
-		<keyword>ss</keyword>
-		<keyword>es</keyword>
-		<keyword>fs</keyword>
-		<keyword>gs</keyword>
-		
-		<keyword>cr0</keyword>
-		<keyword>cr2</keyword>
-		<keyword>cr3</keyword>
-		
-		<keyword>db0</keyword>
-		<keyword>db1</keyword>
-		<keyword>db2</keyword>
-		<keyword>db3</keyword>
-		<keyword>db6</keyword>
-		<keyword>db7</keyword>
-		
-		<keyword>tr6</keyword>
-		<keyword>tr7</keyword>
-		
-		<keyword>st</keyword>
-		<keyword>st(0)</keyword>
-		<keyword>st(1)</keyword>
-		<keyword>st(2)</keyword>
-		<keyword>st(3)</keyword>
-		<keyword>st(4)</keyword>
-		<keyword>st(5)</keyword>
-		<keyword>st(6)</keyword>
-		<keyword>st(7)</keyword>
-		
-		<keyword>mm0</keyword>
-		<keyword>mm1</keyword>
-		<keyword>mm2</keyword>
-		<keyword>mm3</keyword>
-		<keyword>mm4</keyword>
-		<keyword>mm5</keyword>
-		<keyword>mm6</keyword>
-		<keyword>mm7</keyword>
-		
-		<keyword>xmm0</keyword>
-		<keyword>xmm1</keyword>
-		<keyword>xmm2</keyword>
-		<keyword>xmm3</keyword>
-		<keyword>xmm4</keyword>
-		<keyword>xmm5</keyword>
-		<keyword>xmm6</keyword>
-		<keyword>xmm7</keyword>
-
-		-->
 	</keyword-list>
 
 	<pattern-item _name = "Character Constant" style = "String">

@@ -62,6 +62,7 @@
 		<!--
 			op codes del procesador		
 		-->
+        <keyword>res</keyword>
 		<keyword>add.co</keyword>
 		<keyword>add.ci</keyword>
 		<keyword>add.cio</keyword>

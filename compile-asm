@@ -1,0 +1,14 @@
+#!/bin/sh
+# [Gedit Tool]
+# Applicability=all
+# Shortcut=<Primary><Shift>c
+# Save-files=document
+# Name=compile-asm
+# Input=document
+# Output=output-panel
+# Languages=assembler (mc88110)
+
+88110e -o ${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin $GEDIT_CURRENT_DOCUMENT_NAME
+
+		#./88110e -e $2 -o $1.bin $1.ens
+		#./88110e -o $1.bin $1.ens

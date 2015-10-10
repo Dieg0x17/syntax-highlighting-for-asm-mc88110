@@ -1,0 +1,19 @@
+#!/bin/sh
+# [Gedit Tool]
+# Applicability=all
+# Shortcut=<Primary><Shift>r
+# Save-files=document
+# Name=run-emulator
+# Input=document
+# Output=output-panel
+# Languages=assembler (mc88110)
+
+if test -e ${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin; then
+    echo "Ejecutando emulador..."
+    gnome-terminal -x "em88110 -c serie ${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin" &
+else
+    echo "Compilando $GEDIT_CURRENT_DOCUMENT_NAME"
+    88110e -o ${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin $GEDIT_CURRENT_DOCUMENT_NAME
+    sleep 5
+    sh $0
+fi

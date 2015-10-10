@@ -4,11 +4,17 @@
 # Shortcut=<Primary><Shift>c
 # Save-files=document
 # Name=compile-asm
-# Input=document
+# Input=nothing
 # Output=output-panel
 # Languages=assembler (mc88110)
 
-88110e -o ${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin $GEDIT_CURRENT_DOCUMENT_NAME
+err=$( 88110e -o ${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin $GEDIT_CURRENT_DOCUMENT_NAME 2>&1 )
+echo $err
 
+linenum=$( echo $err | grep ERROR | grep -oP '\(\K\d+(?=\))' 2>&1 )
+if [ -n "$linenum" ]; then
+    line=$(awk 'NR=='$linenum $GEDIT_CURRENT_DOCUMENT_NAME)
+    echo "\n$linenum --> $line"
+fi
 		#./88110e -e $2 -o $1.bin $1.ens
 		#./88110e -o $1.bin $1.ens

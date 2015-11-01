@@ -10,7 +10,9 @@
 
 if [ -e ${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin ]; then
     echo "Ejecutando emulador..."
-    xterm -e "em88110 -c serie ${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin" &
+    echo "em88110 -c /usr/local/88k/serie `pwd`/${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin"
+
+    gnome-terminal -e "em88110 -c /usr/local/88k/serie `pwd`/${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin" &
 else
     err=$( 88110e -o ${GEDIT_CURRENT_DOCUMENT_NAME%.asm}.bin $GEDIT_CURRENT_DOCUMENT_NAME 2>&1 )
     echo $err
@@ -22,3 +24,4 @@ else
     fi
 
 fi
+

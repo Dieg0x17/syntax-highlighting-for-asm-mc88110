@@ -35,9 +35,13 @@ wget https://raw.githubusercontent.com/Dieg0x17/syntax-highlighting-for-asm-mc88
 And copy to:
 ```
 cp compile-asm run-emulator ~/.config/gedit/tools
+
+chmod +x ~/.config/gedit/tools/*
 ```
 
 I recomend enabling line numbers for debugging.
 ```
 Gedit > Preferences > Show Line Numbers
 ```
+
+Now if you open a file with .asm extension, gedit will highlight the file. And if you press ctrl+shift+c you can compile and run with ctrl+shift+r.
